@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حجز موعد - شركتي</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Font Awesome للأيقونات (اختياري) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1> احجز موعد مع Cardvia</h1>
+        <p>اختر الموعد المناسب لك وسيتم التأكيد فوراً</p>
+
+        <form id="bookingForm">
+            <!-- بيانات العميل الحاجز -->
+            <div class="form-group">
+                <label for="customerName">الاسم كامل</label>
+                <input type="text" id="customerName" name="customerName" placeholder="" required>
+            </div>
+
+            <div class="form-group">
+                <label for="customerPhone">رقم الواتساب</label>
+                <input type="tel" id="customerPhone" name="customerPhone" placeholder="مثال: 201234567890" required>
+            </div>
+
+            <div class="form-group">
+                <label for="customerEmail">البريد الإلكتروني</label>
+                <input type="email" id="customerEmail" name="customerEmail" placeholder="example@domain.com" required>
+            </div>
+
+            <!-- المواعيد المتاحة -->
+            <div class="form-group">
+                <label for="appointmentSlot">اختر الموعد</label>
+                <select id="appointmentSlot" name="appointmentSlot" required>
+                    <option value="">-- اختر موعداً --</option>
+                    <!-- هنا هتتحط المواعيد ديناميكياً من JavaScript -->
+                </select>
+            </div>
+
+            <!-- سبب الزيارة / رسالة -->
+            <div class="form-group">
+                <label for="message">الرسالة أو سبب الزيارة</label>
+                <textarea id="message" name="message" rows="4" placeholder="اكتب أي تفاصيل إضافية..."></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn">تأكيد الحجز</button>
+        </form>
+
+        <div id="resultMessage" class="result-message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
