@@ -1,49 +1,47 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حجز موعد - شركتي</title>
+    <title>حجز موعد - واتساب فوري</title>
     <link rel="stylesheet" href="style.css">
-    <!-- EmailJS Library -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <!-- Font Awesome للأيقونات (اختياري) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1> احجز موعد مع Cardvia</h1>
-        <p>اختر الموعد المناسب لك وسيتم التأكيد فوراً</p>
+        <h1>📅 احجز موعدك</h1>
+        <p>اختر الموعد المناسب وسيتم إرسال تأكيد فوري على واتساب</p>
 
         <form id="bookingForm">
-            <!-- بيانات العميل الحاجز -->
             <div class="form-group">
-                <label for="customerName">الاسم كامل</label>
-                <input type="text" id="customerName" name="customerName" placeholder="" required>
+                <label for="name">الاسم كامل</label>
+                <input type="text" id="name" name="name" placeholder="مثال: أحمد محمد" required>
             </div>
 
             <div class="form-group">
-                <label for="customerPhone">رقم الواتساب</label>
-                <input type="tel" id="customerPhone" name="customerPhone" placeholder="مثال: 201234567890" required>
+                <label for="phone">رقم الواتساب</label>
+                <input type="tel" id="phone" name="phone" placeholder="مثال: 201234567890" required>
+                <small>اكتب الرقم بدون صفر أو +، مثال: 201234567890</small>
             </div>
 
             <div class="form-group">
-                <label for="customerEmail">البريد الإلكتروني</label>
-                <input type="email" id="customerEmail" name="customerEmail" placeholder="example@domain.com" required>
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
             </div>
 
-            <!-- المواعيد المتاحة -->
             <div class="form-group">
-                <label for="appointmentSlot">اختر الموعد</label>
-                <select id="appointmentSlot" name="appointmentSlot" required>
+                <label for="appointment">اختر الموعد</label>
+                <select id="appointment" name="appointment" required>
                     <option value="">-- اختر موعداً --</option>
-                    <!-- هنا هتتحط المواعيد ديناميكياً من JavaScript -->
+                    <option value="2026-02-15 10:00 ص">2026-02-15 10:00 ص</option>
+                    <option value="2026-02-15 11:30 ص">2026-02-15 11:30 ص</option>
+                    <option value="2026-02-16 09:00 ص">2026-02-16 09:00 ص</option>
+                    <option value="2026-02-16 02:00 م">2026-02-16 02:00 م</option>
+                    <option value="2026-02-17 01:00 م">2026-02-17 01:00 م</option>
                 </select>
             </div>
 
-            <!-- سبب الزيارة / رسالة -->
             <div class="form-group">
-                <label for="message">الرسالة أو سبب الزيارة</label>
+                <label for="message">الرسالة أو سبب الزيارة (اختياري)</label>
                 <textarea id="message" name="message" rows="4" placeholder="اكتب أي تفاصيل إضافية..."></textarea>
             </div>
 
@@ -55,3 +53,4 @@
 
     <script src="script.js"></script>
 </body>
+</html>
